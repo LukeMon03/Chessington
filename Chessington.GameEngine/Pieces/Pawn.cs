@@ -10,9 +10,7 @@ namespace Chessington.GameEngine.Pieces
 
         public override IEnumerable<Square> GetAvailableMoves(Board board)
         {
-
-            Square newPosition2;
-            Square newPosition;
+            
             // find current location
             Square currentPosition = board.FindPiece(this);
             var availableSquares = new List<Square>();
@@ -24,21 +22,15 @@ namespace Chessington.GameEngine.Pieces
                  // figure out if its their first move
                  if (currentPosition.Row == 6)
                  {
-                    newPosition = Square.At(currentPosition.Row - 2, currentPosition.Col);
-                    newPosition2 = Square.At(currentPosition.Row - 1, currentPosition.Col);
 
                     // put that square in list
-                    availableSquares.Add(newPosition);
-                    availableSquares.Add(newPosition2);
+                    availableSquares.Add(Square.At(currentPosition.Row - 2, currentPosition.Col));
+                    
                  }
-                 // else would mean that its moved from its first position
-                 else
-                 {
-                    // find square one up from it (which is 1 less in y co-ordinate)
-                    newPosition = Square.At(currentPosition.Row - 1, currentPosition.Col);
-                    // put that square in list
-                    availableSquares.Add(newPosition);
-                 }
+                 
+            // put that square in list
+            availableSquares.Add(Square.At(currentPosition.Row - 1, currentPosition.Col));
+                 
                 
                 
             }
@@ -47,21 +39,19 @@ namespace Chessington.GameEngine.Pieces
             {
                 // figure out if its their first move
                 if (currentPosition.Row == 1)
-                {
-                    newPosition = Square.At(currentPosition.Row + 2, currentPosition.Col);
-                    newPosition2 = Square.At(currentPosition.Row + 1, currentPosition.Col);
+                { 
+                    
                     // put that square in list
-                    availableSquares.Add(newPosition);
-                    availableSquares.Add(newPosition2);
+                    availableSquares.Add(Square.At(currentPosition.Row + 2, currentPosition.Col));
+                    
                 }
                 // else would mean that its moved from its first position
-                else
-                {
-                    // find square one up from it (which is 1 less in y co-ordinate)
-                    newPosition = Square.At(currentPosition.Row + 1, currentPosition.Col);
-                    // put that square in list
-                    availableSquares.Add(newPosition);
-                }
+                
+               
+  
+            // put that square in list
+            availableSquares.Add(Square.At(currentPosition.Row + 1, currentPosition.Col));
+                
 
             }
 

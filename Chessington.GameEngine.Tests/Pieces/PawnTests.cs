@@ -75,7 +75,7 @@ namespace Chessington.GameEngine.Tests.Pieces
         {
             var board = new Board(Player.Black);
             var pawn = new Pawn(Player.Black);
-            board.AddPiece(Square.At(5, 2), pawn);
+            board.AddPiece(Square.At(7, 2), pawn);
 
             pawn.MoveTo(board, Square.At(6, 2));
             var moves = pawn.GetAvailableMoves(board).ToList();
