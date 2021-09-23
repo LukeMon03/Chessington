@@ -16,15 +16,15 @@ namespace Chessington.GameEngine.Pieces
             var availableSquares = new List<Square>();
 
 
-            
-            for (int i =  1; i < GameSettings.BoardSize; i++)
+
+            for (int i = 1; i < GameSettings.BoardSize; i++)
             {
-                Square newSquare = (Square.At(currentPosition.Row + i,currentPosition.Col - i));
+                Square newSquare = (Square.At(currentPosition.Row + i, currentPosition.Col - i));
                 if (newSquare.Row < 8 && newSquare.Row >= 0 && newSquare.Col < 8 && newSquare.Col >= 0)
                 {
                     availableSquares.Add(newSquare);
                 }
-                 newSquare = (Square.At(currentPosition.Row + i, currentPosition.Col + i));
+                newSquare = (Square.At(currentPosition.Row + i, currentPosition.Col + i));
                 if (newSquare.Row < 8 && newSquare.Row >= 0 && newSquare.Col < 8 && newSquare.Col >= 0)
                 {
                     availableSquares.Add(newSquare);
@@ -39,7 +39,7 @@ namespace Chessington.GameEngine.Pieces
                 {
                     availableSquares.Add(newSquare);
                 }
-            }            
+            }
             return availableSquares;
         }
     }
